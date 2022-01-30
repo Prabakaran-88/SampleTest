@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jan 30, 2022 10:27:59 AM by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="librarysystem" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.prabakaran.libmgmtsyssp.entities.Book" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="book">
+        <id name="bookid" type="int">
+            <column name="bookid"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.prabakaran.libmgmtsyssp.entities.Publication" embed-xml="true" fetch="select" insert="true" name="publication" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="publicationid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="bookname" optimistic-lock="true" type="string" unique="false">
+            <column length="450" name="bookname" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
